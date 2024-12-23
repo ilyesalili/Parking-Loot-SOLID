@@ -7,6 +7,6 @@ public class Van extends Vehicle{
     }
     @Override
     public boolean isCompatibleWithSpot(ParkingSpot parkingSpot) {
-        return parkingSpot instanceof LargeSpot || parkingSpot instanceof CarSpot;
+        return parkingSpot instanceof LargeSpot || parkingSpot instanceof CarSpot ;
     }
 }

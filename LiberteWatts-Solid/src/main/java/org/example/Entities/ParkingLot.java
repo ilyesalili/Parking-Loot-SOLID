@@ -20,6 +20,7 @@ public class ParkingLot {
             spots.add(new LargeSpot());
         }
     }
+
     public boolean parkVehicle(Vehicle vehicle) {
         List<ParkingSpot> availableSpots = findAvailableSpots(vehicle);
         if (vehicle instanceof Van) {
@@ -50,7 +51,8 @@ public class ParkingLot {
             }
             return false;
         }
-        if (vehicle instanceof Car || vehicle instanceof Motorcycle){
+
+        if (vehicle instanceof Car || vehicle instanceof Motorcycle) {
             if (availableSpots.size() >= vehicle.getRequiredSpots()) {
                 List<ParkingSpot> spotsToOccupy = availableSpots.subList(0, vehicle.getRequiredSpots());
                 for (ParkingSpot spot : spotsToOccupy) {
@@ -87,10 +89,11 @@ public class ParkingLot {
     private List<ParkingSpot> findAvailableSpots(Vehicle vehicle) {
         List<ParkingSpot> availableSpots = new ArrayList<>();
         for (ParkingSpot spot : spots) {
-            if (!spot.isOccupied() && vehicle.isCompatibleWithSpot(spot)) {
+            if (!spot.isOccupied() && vehicle.isCompatibleWithSpot(spot) && spot.isVehicleCompatible(vehicle)) {
                 availableSpots.add(spot);
             }
         }
+
         return availableSpots;
     }
 
