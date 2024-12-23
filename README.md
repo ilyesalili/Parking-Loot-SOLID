@@ -1,4 +1,5 @@
 # Système de Gestion de Parking
+![Class Diagram](https://github.com/ilyesalili/Parking-Loot-SOLID/blob/main/Diagram%20class.png?raw=true)
 
 Ce projet implémente un système de gestion de parking extensible et scalable, utilisant les principes SOLID et une architecture orientée objet. Le système permet de gérer différentes sortes de véhicules et de places de parking.
 
@@ -17,7 +18,7 @@ Ce projet implémente un système de gestion de parking extensible et scalable, 
 - **Responsabilité** : Représenter une place de parking.
 - **Méthodes clés** :
   - `isOccupied` : Indique si la place est occupée.
-  - `isCompatibleWithSpot` : Vérifie si un véhicule peut se garer dans la place.
+  - `isVehicleCompatible` : Vérifie si un véhicule peut se garer dans la place.
   - `park` et `leave` : Gèrent l'état de la place (occupée ou libre).
   
 - **Sous-classes** :
